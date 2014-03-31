@@ -25,6 +25,9 @@ public class MemberResourceRESTService {
    @Inject
    private EntityManager em;
 
+    @Inject
+    MemberResourceManager memberResourceManager;
+
    @GET
    @Produces("text/xml")
    public List<Member> listAllMembers() {
@@ -38,6 +41,14 @@ public class MemberResourceRESTService {
       final List<Member> results = em.createNamedQuery("listAllMembers", Member.class).getResultList();
       return results;
    }
+
+   @GET
+   @Path("asyn")
+   public String doSomethingAsynchronously() {
+       memberResourceManager.doSomethingAsynchronously();
+       return "OK";
+   }
+
 
    @GET
    @Path("/{id:[0-9][0-9]*}")
