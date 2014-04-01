@@ -1,15 +1,22 @@
-jboss-javaee6-webapp-src
+JBoss JEE 6 Example
 ========================
 
 What is it?
 -----------
 
-This is your project! It's a sample, deployable Maven 3 project to help you
+It's a sample, deployable Maven 3 project to help you
 get your foot in the door developing with Java EE 6 on JBoss AS 7. This 
 project is setup to allow you to create a compliant Java EE 6 application 
 using JSF 2.0, CDI 1.0, EJB 3.1, JPA 2.0 and Bean Validation 1.0. It includes
 a persistence unit and some sample persistence and transaction code to help 
-you get your feet wet with database access in enterprise Java. 
+you get your feet wet with database access in enterprise Java. It covers:
+
+- Simple JSF pages as presentation layer
+- EJB and REST APIs
+- JAP entities
+- Examples for event firing
+- How to implement a security interceptor for REST API
+- How to create a scheduler using Time Service
 
 System requirements
 -------------------
@@ -55,19 +62,6 @@ To undeploy from JBoss AS, run this command:
 
 You can also start JBoss AS 7 and deploy the project using Eclipse. See the JBoss AS 7
 Getting Started Guide for Developers for more information.
- 
-Running the Arquillian tests
-============================
-
-By default, tests are configured to be skipped. The reason is that the sample
-test is an Arquillian test, which requires the use of a container. You can
-activate this test by selecting one of the container configuration provided 
-for JBoss AS 7 (remote).
-
-To run the test in JBoss AS 7, first start a JBoss AS 7 instance. Then, run the
-test goal with the following profile activated:
-
-    mvn clean test -Parq-jbossas-remote
 
 Importing the project into an IDE
 =================================
@@ -85,6 +79,18 @@ Detailed instructions for using Eclipse with JBoss AS 7 are provided in the
 JBoss AS 7 Getting Started Guide for Developers.
 
 Downloading the sources and Javadocs
+====================================
+
+If you want to be able to debug into the source code or look at the Javadocs
+of any library in the project, you can run either of the following two
+commands to pull them into your local repository. The IDE should then detect
+them.
+
+    mvn dependency:sources
+    mvn dependency:resolve -Dclassifier=javadoc
+
+
+Examples
 ====================================
 
 If you want to be able to debug into the source code or look at the Javadocs
