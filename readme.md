@@ -1,6 +1,9 @@
 JBoss JEE 6 Example
 ========================
 
+
+[![Build Status](https://travis-ci.org/tongqqiu/jeeJBossExample.svg?branch=master)](https://travis-ci.org/tongqqiu/jeeJBossExample)
+
 What is it?
 -----------
 
